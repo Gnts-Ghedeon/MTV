@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\API\ActordirsController;
 use App\Http\Controllers\API\GenresController;
 use App\Http\Controllers\API\LanguagesController;
 use App\Http\Controllers\API\LiveTvController;
@@ -41,7 +42,7 @@ Route::apiResources([
     'seasons'=>SaisonController::class,
     'subsplan'=>SubsPlanController::class,
     'languages'=>LanguagesController::class,
-
+    'actorsdirs'=>ActordirsController::class,
     'sports'=>SportsController::class,
     'sportcats'=>SportsCategory::class,
     'genres'=>GenresController::class,
