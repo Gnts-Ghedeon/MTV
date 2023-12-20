@@ -17,7 +17,7 @@ class LanguagesController extends Controller
      */
     public function index(Request $request)
     {
-        $languages = Language::latest()->paginate(25);
+        $languages = Language::all();
 
         return $languages;
     }
@@ -44,11 +44,17 @@ class LanguagesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
     public function show($id)
     {
-        $language = Language::findOrFail($id);
+        $language = Language::find($id);
 
-        return $language;
+        if($language){
+            return response()->json($language, 200); }
+        else
+        {
+            return response()->json(["message"=>"aucune entrée"], 404 );
+        }
     }
 
     /**
@@ -77,8 +83,20 @@ class LanguagesController extends Controller
      */
     public function destroy($id)
     {
-        Language::destroy($id);
+        $test=Language::destroy($id);
 
-        return response()->json(null, 204);
+        //return response()->json(null, 204);
+        if($test){
+            return response()->json(["message"=>" succes"], 204);
+        }
+        else{
+        {
+
+            return response()->json(["message"=>"erreur de suppression, rassurez vous que cet id existe"], );
+
+        }
+        };
     }
 }
+
+

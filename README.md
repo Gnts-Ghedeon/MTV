@@ -10,7 +10,7 @@ MIS EN ROUTE :
 
     ### Ne pas faire un PHP artisan serve ###
     
-    1- Base de donnée se trouve dans le fichier file.sql a la racine du projet
+    1- Base de donnée se trouve dans le fùichier file.sql a la racine du projet
     
     2- Modifier le fichier .env et l'adapder en fonction de vos identifiant base de donnée et smtp
     

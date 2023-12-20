@@ -48,7 +48,12 @@ class GenresController extends Controller
     {
         $genre = genres::find($id);
 
-        return $genre;
+        if($genre){
+            return response()->json($genre, 200); }
+        else
+        {
+            return response()->json(["message"=>"aucune entrée"], 404 );
+        }
     }
 
     /**
