@@ -7,6 +7,8 @@ use App\Http\Controllers\API\GenresController;
 use App\Http\Controllers\API\LanguagesController;
 use App\Http\Controllers\API\LiveTvController;
 use App\Http\Controllers\API\MoviesController;
+use App\Http\Controllers\API\PodcastsCotroller;
+use App\Http\Controllers\API\RadiosCotroller;
 use App\Http\Controllers\API\SaisonController;
 use App\Http\Controllers\API\SeriesController;
 use App\Http\Controllers\API\SettingsController;
@@ -44,6 +46,8 @@ Route::post('/auth/login', [AuthController::class, 'loginUser']);
 Route::apiResources([
 
     'movies'=> MoviesController::class,
+    'radios' =>RadiosCotroller::class,
+    'podcast' => PodcastsCotroller::class,
     'genres'=>GenresController::class,
     'series'=>SeriesController::class,
     'seasons'=>SaisonController::class,
