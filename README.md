@@ -39,7 +39,7 @@ API ROUTE :
     api/genres'       [GET|POST|PUT|DELETE]         ### Liste des genres de films et series 
     api/series'       [GET|POST|PUT|DELETE]         ### Liste des series
     api/settings'     [GET|POST|PUT|DELETE]         ### Liste des paramettres des utilisateurs
-    apt/auth/login    [GET]                         ### Authentification de base avec Email + Mot de passe
+    apt/auth/login    [POST]                        ### Authentification de base avec Email + Mot de passe
 
 ### NOTE ########
 
