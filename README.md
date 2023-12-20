@@ -19,23 +19,26 @@ API Route de base
 
     Liste des routes avec leur verbes :
     
-    api/movies [GET|DELETE]
-    api/livestv [GET
-    api/seasons'
-    api/subsplan'
-    api/languages'
-    api/actorsdirs'
-    api/sports'
-    api/sportcats'
-    api/genres'
-    api/series'
-    api/settings'
+    api/movies        [GET|POST|PUT|DELETE]         ### Liste des films disponible sur la plateforme
+    api/livestv       [GET|POST|PUT|DELETE]         ### Liste des chaines de lives disponible sur la plateforme
+    api/seasons'      [GET|POST|PUT|DELETE]         ### Liste des saisons de serie disponible sur la plateforme
+    api/subsplan'     [GET|POST|PUT|DELETE]         ### Liste des differents plan d'abonnement disponibles
+    api/languages'    [GET|POST|PUT|DELETE]         ### Liste des langues d'affichage disponible sur la plateforme
+    api/actorsdirs'   [GET|POST|PUT|DELETE]         ### Liste des differents acteurs et directeurs ou producteur
+    api/sports'       [GET|POST|PUT|DELETE]         ### Liste des chaines de sports
+    api/sportcats'    [GET|POST|PUT|DELETE]         ### Liste des catégories de chaine de sports
+    api/genres'       [GET|POST|PUT|DELETE]         ### Liste des genres de films et series 
+    api/series'       [GET|POST|PUT|DELETE]         ### Liste des series
+    api/settings'     [GET|POST|PUT|DELETE]         ### Liste des paramettres des utilisateurs
+    apt/auth/login    [GET]                         ### Authentification de base avec Email + Mot de passe
 
 ### AUTHENTIFICATION ########
 
+1- Auth de base, Email + mot de passe ### LOGIN -- [POST] = /login
 
+2- Auth avec Google , Email + mot de passe ###
 
-//Auth de base, Email + mot de passe ### LOGIN -- [POST] = /login
+3- Auth avec Facebook 
 
 
 ### List All Movies [GET] = /movies
