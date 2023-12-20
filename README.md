@@ -8,11 +8,15 @@ Pré-requis
 
 MIS EN ROUTE : 
 
-    1-Base de donnée se trouve dans le fichier file.sql a la racine du projet
+    ### Ne pas faire un PHP artisan serve ###
     
-    2-Modifier le fichier .env et l'adapder en fonction de vos identifiant base de donnée et smtp
+    1- Base de donnée se trouve dans le fichier file.sql a la racine du projet
     
-    2-Prenez tout le contenu et le placer directement dans votre dossier www ou equivalent de votre server
+    2- Modifier le fichier .env et l'adapder en fonction de vos identifiant base de donnée et smtp
+    
+    3- Prenez tout le contenu et le placer directement dans votre dossier www ou equivalent de votre server
+
+    
 
 
 API Route de base 
