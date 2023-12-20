@@ -49,8 +49,8 @@ API Route de base
     
 2- Le reste operation [POST|PUT|DELETE] se font via l'interface admin de la plateforme disponible sur le https://{Nom de domaine ou ip addresse corespondante }/admin
 
-    Identifiant : admin@admin.com
-    mot de passe : admin
+    Identifiant  : admin@admin.com
+    Mot de passe : admin
 
 
 
