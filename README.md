@@ -1,11 +1,41 @@
-MTV
+Pré-requis
+
+    php >= 8.1.X
+    
+    Laravel >= 9.X
+
+MIS EN ROUTE : 
+
+    1-Base de donnée se trouve dans le fichier file.sql a la racine du projet
+    
+    2-Modifier le fichier .env et l'adapder en fonction de vos identifiant base de donnée et smtp
+    
+    2-Prenez tout le contenu et le placer directement dans votre dossier www ou equivalent de votre server
+
 
 API Route de base 
 
-HOST: https://nd/api/
+    HOST: https://{Nom de domaine ou ip addresse corespondante }/api/{Route}
 
-//Auth de base, Email + mot de passe 
-### LOGIN -- [POST] = /login
+    Liste des routes avec leur verbes :
+    
+    api/movies [GET|DELETE]
+    api/livestv [GET
+    api/seasons'
+    api/subsplan'
+    api/languages'
+    api/actorsdirs'
+    api/sports'
+    api/sportcats'
+    api/genres'
+    api/series'
+    api/settings'
+
+### AUTHENTIFICATION ########
+
+
+
+//Auth de base, Email + mot de passe ### LOGIN -- [POST] = /login
 
 
 ### List All Movies [GET] = /movies
@@ -21,7 +51,8 @@ HOST: https://nd/api/
     "video_title": "Laal Singh Chaddha",
     "release_date": 1660156200,
     "duration": "2M 10S",
-    "video_description": "<p>An official remake of the 1994 American film Forrest Gump</p>\r\n<p><strong>Director</strong>: Advait Chandan</p>\r\n<p><strong>Writer</strong>: Atul     
+    "video_description": "<p>An official remake of the 1994 American film Forrest Gump</p>\r\n<p><strong>Director</strong>: Advait 
+    Chandan</p>\r\n<p><strong>Writer</strong>: Atul     
     Kulkarni</p>\r\n<p><strong>Actors</strong>: Aamir Khan, Kareena Kapoor, Manav Vij</p>\r\n<p><strong>Production</strong>: N/A</p>",
     "actor_id": "13,14,15",
     "director_id": "12",
@@ -59,18 +90,6 @@ HOST: https://nd/api/
 
 
 
-    //recuperer les films en get 
-    
-    /api/movies
-    'livestv'=>LiveTvController::class,
-    'seasons'=>SaisonController::class,
-    'subsplan'=>SubsPlanController::class,
-    'languages'=>LanguagesController::class,
-    'actorsdirs'=>ActordirsController::class,
-    'sports'=>SportsController::class,
-    'sportcats'=>SportsCategory::class,
-    'genres'=>GenresController::class,
-    'series'=>SeriesController::class,
-    'settings'=>SettingsController::class,
+
 
 
