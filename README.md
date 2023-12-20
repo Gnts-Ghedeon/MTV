@@ -42,8 +42,10 @@ API Route de base
     
     Ex: Response 200 avec (application/json) en entête 
     
-2- Le reste operation [POST|PUT|DELETE] se font via l'interface admin de la plateforme
- 
+2- Le reste operation [POST|PUT|DELETE] se font via l'interface admin de la plateforme disponible sur le https://{Nom de domaine ou ip addresse corespondante }/admin
+
+    Identifiant : admin@admin.com
+    mot de passe : admin
 
 
 
