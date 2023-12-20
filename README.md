@@ -4,6 +4,8 @@ Pré-requis
     
     Laravel >= 9.X
 
+    Mysql >= 5.X
+
 MIS EN ROUTE : 
 
     1-Base de donnée se trouve dans le fichier file.sql a la racine du projet
@@ -32,14 +34,11 @@ API Route de base
     api/settings'     [GET|POST|PUT|DELETE]         ### Liste des paramettres des utilisateurs
     apt/auth/login    [GET]                         ### Authentification de base avec Email + Mot de passe
 
-### AUTHENTIFICATION ########
+### NOTE ########
 
-1- Auth de base, Email + mot de passe ### LOGIN -- [POST] = /login
+1- Pour la consommation coté client de l'api, seul la methode [GET] (recuperation des données + recherche ) sont disponible
 
-2- Auth avec Google , Email + mot de passe ###
-
-3- Auth avec Facebook 
-
+2- Le reste se fait via l'interface admin de la plateforme
 
 ### List All Movies [GET] = /movies
 
