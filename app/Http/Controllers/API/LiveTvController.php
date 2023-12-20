@@ -17,9 +17,9 @@ class LiveTvController extends Controller
      */
     public function index(Request $request)
     {
-        $livetv = LiveTV::latest()->paginate(25);
+        $livetv = LiveTV::all();//latest()->paginate(25);
 
-        return $livetv;
+        return response()->json($livetv,200);
     }
 
     /**
@@ -46,9 +46,15 @@ class LiveTvController extends Controller
      */
     public function show($id)
     {
-        $livetv = LiveTV::findOrFail($id);
+        $livetv = LiveTV::find($id);
 
-        return $livetv;
+        //return $livetv;
+
+        if($livetv){
+            return response()->json($livetv, 200); }
+        else{
+            return response()->json(["message"=>"aucune entrée"], );
+        }
     }
 
     /**
@@ -62,10 +68,14 @@ class LiveTvController extends Controller
     public function update(Request $request, $id)
     {
 
-        $livetv = LiveTV::findOrFail($id);
-        $livetv->update($request->all());
+        $livetv = LiveTV::find($id);
+        $test=$livetv->update($request->all());
 
-        return response()->json($livetv, 200);
+        if($test){
+            return response()->json($livetv, 200); }
+        else{
+            return response()->json(["message"=>"aucune entrée"], );
+        }
     }
 
     /**
@@ -77,8 +87,16 @@ class LiveTvController extends Controller
      */
     public function destroy($id)
     {
-        LiveTV::destroy($id);
+        $test = LiveTV::destroy($id);
 
-        return response()->json(null, 204);
+        if($test){
+            return response()->json(null, 204);
+        }
+        else{
+        {
+
+            return response()->json(["message"=>"erreur de suppression"], );
+        }
+        };
     }
 }

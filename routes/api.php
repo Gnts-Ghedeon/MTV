@@ -38,7 +38,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::apiResources([
     'movies'=> MoviesController::class,
-    'livesTV'=>LiveTvController::class,
+    'livestv'=>LiveTvController::class,
     'seasons'=>SaisonController::class,
     'subsplan'=>SubsPlanController::class,
     'languages'=>LanguagesController::class,
