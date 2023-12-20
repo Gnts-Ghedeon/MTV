@@ -17,9 +17,9 @@ class EpisodesController extends Controller
      */
     public function index(Request $request)
     {
-        $episodes = Episodes::latest()->paginate(25);
+        $episodes = Episodes::all();//latest()->paginate(25);
 
-        return $episodes;
+        return response()->json($episodes, 200);
     }
 
     /**
@@ -46,9 +46,14 @@ class EpisodesController extends Controller
      */
     public function show($id)
     {
-        $episode = Episodes::findOrFail($id);
+        $episode = Episodes::find($id);
 
-        return $episode;
+        if($episode){
+            return response()->json($episode, 200); }
+        else
+        {
+            return response()->json(["message"=>"aucune entrée"], );
+        }
     }
 
     /**
@@ -77,8 +82,18 @@ class EpisodesController extends Controller
      */
     public function destroy($id)
     {
-        Episodes::destroy($id);
+        $test=Episodes::destroy($id);
 
-        return response()->json(null, 204);
+        if($test){
+            return response()->json(["message"=>" succes"], 204);
+        }
+        else{
+        {
+
+            return response()->json(["message"=>"erreur de suppression, rassurez vous que cet id existe"], );
+
+        }
+        };
+        //return response()->json(null, 204);
     }
 }

@@ -17,9 +17,9 @@ class GenresController extends Controller
      */
     public function index(Request $request)
     {
-        $genre = genres::latest()->paginate(25);
+        $genre = genres::all();//latest()->paginate(25);
 
-        return $genre;
+        return response()->json($genre,200);
     }
 
     /**
@@ -46,7 +46,7 @@ class GenresController extends Controller
      */
     public function show($id)
     {
-        $genre = genres::findOrFail($id);
+        $genre = genres::find($id);
 
         return $genre;
     }
@@ -77,8 +77,17 @@ class GenresController extends Controller
      */
     public function destroy($id)
     {
-        genres::destroy($id);
+       $test = genres::destroy($id);
 
-        return response()->json(null, 204);
+        if($test){
+            return response()->json(["message"=>" succes"], 204);
+        }
+        else{
+        {
+
+            return response()->json(["message"=>"erreur de suppression, rassurez vous que cet id existe"], );
+
+        }
+        };
     }
 }

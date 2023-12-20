@@ -17,9 +17,9 @@ class MoviesController extends Controller
      */
     public function index(Request $request)
     {
-        $movies = Movies::latest()->paginate(25);
+        $movies = Movies::all();//latest()->paginate(25);
 
-        return $movies;
+        return response()->json($movies, 200);
     }
 
     /**
@@ -83,8 +83,17 @@ class MoviesController extends Controller
      */
     public function destroy($id)
     {
-        Movies::destroy($id);
+        $test=Movies::destroy($id);
 
-        return response()->json(null, 204);
+        if($test){
+            return response()->json(["message"=>" succes"], 204);
+        }
+        else{
+        {
+
+            return response()->json(["message"=>"erreur de suppression, rassurez vous que cet id existe"], );
+
+        }
+        };
     }
 }
