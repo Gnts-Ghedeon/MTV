@@ -1,4 +1,4 @@
-Pré-requis
+PRE-REQUIS :
 
     php >= 8.1.X
     
@@ -20,7 +20,7 @@ MIS EN ROUTE :
 
     
 
-API Route de base 
+API ROUTE :  
 
     HOST: https://{Nom de domaine ou ip addresse corespondante }/api/{Route}
 
@@ -41,16 +41,16 @@ API Route de base
 
 ### NOTE ########
 
-1- Pour la consommation coté client de l'api, seul la methode [GET] (recuperation des données + recherche ) sont disponible
-
-2- Les reponses sont renvoyer au format JSON suivis du code de cette derniere
+    1- Pour la consommation coté client de l'api, seul la methode [GET] (recuperation des données + recherche ) sont disponible
     
-    Ex: Response 200 avec (application/json) en entête 
+    2- Les reponses sont renvoyer au format JSON suivis du code de cette derniere
+        
+        Ex: Response 200 avec (application/json) en entête 
+        
+    2- Le reste operation [POST|PUT|DELETE] se font via l'interface admin de la plateforme disponible sur le https://{Nom de domaine ou ip addresse corespondante }/admin
     
-2- Le reste operation [POST|PUT|DELETE] se font via l'interface admin de la plateforme disponible sur le https://{Nom de domaine ou ip addresse corespondante }/admin
-
-    Identifiant  : admin@admin.com
-    Mot de passe : admin
+        Identifiant  : admin@admin.com
+        Mot de passe : admin
 
 
 
