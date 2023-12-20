@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\API\ActordirsController;
+use App\Http\Controllers\API\AuthController;
 use App\Http\Controllers\API\GenresController;
 use App\Http\Controllers\API\LanguagesController;
 use App\Http\Controllers\API\LiveTvController;
@@ -33,6 +34,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::post('/auth/register', [AuthController::class, 'createUser']);
+Route::post('/auth/login', [AuthController::class, 'loginUser']);
 
 //API routes a cons...
 

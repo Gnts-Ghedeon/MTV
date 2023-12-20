@@ -98,12 +98,13 @@ class LiveTvController extends Controller
         $test = LiveTV::destroy($id);
 
         if($test){
-            return response()->json(null, 204);
+            return response()->json(["message"=>" succes"], 204);
         }
         else{
         {
 
-            return response()->json(["message"=>"erreur de suppression"], );
+            return response()->json(["message"=>"erreur de suppression, rassurez vous que cet id existe"], );
+
         }
         };
     }
