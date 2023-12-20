@@ -34,7 +34,13 @@ class LiveTvController extends Controller
 
         $livetv = LiveTV::create($request->all());
 
-        return response()->json($livetv, 201);
+        if($livetv){
+            return response()->json($livetv, 201);
+        }
+        else{
+
+            return response()->json(["message"=>" ajout impossible, verifier tous les champs et contraite de clé étrangère"], );
+        }
     }
 
     /**
