@@ -29,6 +29,8 @@ API ROUTE :
     api/movies        [GET|POST|PUT|DELETE]         ### Liste des films disponible sur la plateforme
     api/livestv       [GET|POST|PUT|DELETE]         ### Liste des chaines de lives disponible sur la plateforme
     api/seasons'      [GET|POST|PUT|DELETE]         ### Liste des saisons de serie disponible sur la plateforme
+    api/radios        [GET|POST|PUT|DELETE]         ### Liste des chaines de lives disponible sur la plateforme
+    api/podcast'      [GET|POST|PUT|DELETE]         ### Liste des saisons de serie disponible sur la plateforme
     api/subsplan'     [GET|POST|PUT|DELETE]         ### Liste des differents plan d'abonnement disponibles
     api/languages'    [GET|POST|PUT|DELETE]         ### Liste des langues d'affichage disponible sur la plateforme
     api/actorsdirs'   [GET|POST|PUT|DELETE]         ### Liste des differents acteurs et directeurs ou producteur
