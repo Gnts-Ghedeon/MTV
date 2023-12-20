@@ -35,6 +35,7 @@ class LiveTvController extends Controller
         $livetv = LiveTV::create($request->all());
 
         if($livetv){
+
             return response()->json($livetv, 201);
         }
         else{
@@ -58,7 +59,8 @@ class LiveTvController extends Controller
 
         if($livetv){
             return response()->json($livetv, 200); }
-        else{
+        else
+        {
             return response()->json(["message"=>"aucune entrée"], );
         }
     }

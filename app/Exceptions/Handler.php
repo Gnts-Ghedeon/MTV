@@ -2,6 +2,8 @@
 
 namespace App\Exceptions;
 
+use GuzzleHttp\Exception\RequestException;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Throwable;
 
@@ -49,11 +51,15 @@ class Handler extends ExceptionHandler
 
             $this->renderable(function (Throwable $e, $request) {
 
-                if($request->wantsJson()){
+                if($e instanceof ModelNotFoundException && $request->wantsJson()){
 
-                    return response()->json(["message"=>"aucune entrée"], );
+                    return response()->json(["message"=>$e->getMessage()+"aucune entrée"], );
 
                 }
+                else if ($e instanceof RequestException && $request->wantsJson()) {
+                return response()->json(['message' => $e->getMessage()+' pour des req de type post rassurer vous d etre authentifier'], 500);
+                 }
+
 
             });
 
