@@ -16,8 +16,9 @@ MIS EN ROUTE :
     
     3- Prenez tout le contenu et le placer directement dans votre dossier www ou equivalent de votre server
 
-    
+    4- puis lancer le projet comme par exemple :  https://{Nom de domaine ou ip addresse corespondante }/ [{nom du dossier}]
 
+    
 
 API Route de base 
 
