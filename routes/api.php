@@ -42,6 +42,7 @@ Route::post('/auth/login', [AuthController::class, 'loginUser']);
 //API routes a cons...
 
 Route::apiResources([
+
     'movies'=> MoviesController::class,
     'genres'=>GenresController::class,
     'series'=>SeriesController::class,
@@ -66,13 +67,6 @@ Route::fallback(function(){
 });
 
 //FIN
-
-
-Route::get('sm', function(){
-
-    return response()->json(Movies::all());
-
-});
 
 //Route old
 Route::group(['prefix' => 'v1','namespace' => 'API'], function(){
