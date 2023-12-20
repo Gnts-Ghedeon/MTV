@@ -46,10 +46,10 @@
             {{-- Radio --}}
             @if(getcong('menu_livetv'))
             <li class="has_sub">
-              <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-radio"></i><span>Radio</span><span class="menu-arrow"></span></a>
+              <a href="javascript:void(0);" class="waves-effect"><i class="fa-solid fa-waveform"></i><span>Radio</span><span class="menu-arrow"></span></a>
               <ul class="list-unstyled">
-                <li class="{{classActivePath('tv_category')}}"><a href="{{ URL::to('admin/tv_category') }}" class="{{classActivePath('tv_category')}}"><i class="fa fa-tags"></i><span>{{trans('words.live_tv_category')}}</span></a></li>
-                <li class="{{classActivePath('live_tv')}}"><a href="{{ URL::to('admin/live_tv') }}" class="{{classActivePath('live_tv')}}"><i class="fa fa-list"></i><span>{{trans('words.tv_channel')}}</span></a></li>
+                <li class="{{classActivePath('tv_category')}}"><a href="{{ URL::to('admin/tv_category') }}" class="{{classActivePath('tv_category')}}"><i class="fa fa-tags"></i><span>{{trans('words.radio_cat')}}</span></a></li>
+                <li class="{{classActivePath('live_tv')}}"><a href="{{ URL::to('admin/live_tv') }}" class="{{classActivePath('live_tv')}}"><i class="fa fa-list"></i><span>{{trans('words.radio_channel')}}</span></a></li>
                </ul>
             </li>
             @endif
@@ -59,8 +59,8 @@
             <li class="has_sub">
                 <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-podcast"></i><span>Podcast</span><span class="menu-arrow"></span></a>
                 <ul class="list-unstyled">
-                <li class="{{classActivePath('tv_category')}}"><a href="{{ URL::to('admin/tv_category') }}" class="{{classActivePath('tv_category')}}"><i class="fa fa-tags"></i><span>{{trans('words.live_tv_category')}}</span></a></li>
-                <li class="{{classActivePath('live_tv')}}"><a href="{{ URL::to('admin/live_tv') }}" class="{{classActivePath('live_tv')}}"><i class="fa fa-list"></i><span>{{trans('words.tv_channel')}}</span></a></li>
+                <li class="{{classActivePath('tv_category')}}"><a href="{{ URL::to('admin/tv_category') }}" class="{{classActivePath('tv_category')}}"><i class="fa fa-tags"></i><span>{{trans('words.podcast_cat')}}</span></a></li>
+                <li class="{{classActivePath('live_tv')}}"><a href="{{ URL::to('admin/live_tv') }}" class="{{classActivePath('live_tv')}}"><i class="fa fa-list"></i><span>{{trans('words.podcast_channel')}}</span></a></li>
                 </ul>
             </li>
             @endif

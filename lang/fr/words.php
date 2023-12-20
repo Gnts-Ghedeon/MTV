@@ -44,12 +44,12 @@ return [
     'payment' => 'Paiement',
 
     //Top Menu
-    'profile' => 'Profil', 
-    'logout' => 'Se déconnecter', 
+    'profile' => 'Profil',
+    'logout' => 'Se déconnecter',
 
     //Footer
-    'copyright' => 'droits d\'auteur', 
-    'all_rights' => 'Tous les droits sont réservés', 
+    'copyright' => 'droits d\'auteur',
+    'all_rights' => 'Tous les droits sont réservés',
 
     //Common Text
     'save' => 'sauver',
@@ -61,33 +61,33 @@ return [
     'remove' => 'Retirer',
     'dlt_warning_text' => 'Êtes-vous sûr? Vous ne pourrez pas récupérer cela.',
     'recommended_resolution' => 'Résolution recommandée',
-    'filter_by_lang' => 'Filtrer par langue',  
+    'filter_by_lang' => 'Filtrer par langue',
     'search_by_title' => 'Rechercher par titre ...',
     'select_lang' => 'Choisir la langue',
     'select_genres' => 'Sélectionnez les genres ...',
     'select_show' => 'Sélectionnez Show',
     'filter_by_show' => 'Filtrer par spectacles',
-    'filter_by_cat' => 'Filtrer par catégorie',  
+    'filter_by_cat' => 'Filtrer par catégorie',
     'description' => 'La description',
     'release_date' => 'Date de sortie',
     'duration' => 'Durée',
     'video_upload_type' => 'Type de téléchargement vidéo',
     'video_file' => 'Fichier vidéo',
     'video_url' => 'URL de la vidéo',
-    'video_embed_code' => 'Code d\'intégration vidéo', 
+    'video_embed_code' => 'Code d\'intégration vidéo',
     'type' => 'Type',
-    'filter_by_plan' => 'Filtrer par plan', 
-    'title' => 'Titre', 
+    'filter_by_plan' => 'Filtrer par plan',
+    'title' => 'Titre',
 
 
     //Pages
-    'users_plan_statastics' => 'Statistiques du plan des utilisateurs', 
-    'current_year' => 'Année actuelle', 
+    'users_plan_statastics' => 'Statistiques du plan des utilisateurs',
+    'current_year' => 'Année actuelle',
     'this_year' => 'Cette année',
-    'daily_revenue' => 'Revenu journalier', 
-    'weekly_revenue' => 'Revenu hebdomadaire', 
-    'monthly_revenue' => 'Revenu mensuel', 
-    'yearly_revenue' => 'Revenu annuel',  
+    'daily_revenue' => 'Revenu journalier',
+    'weekly_revenue' => 'Revenu hebdomadaire',
+    'monthly_revenue' => 'Revenu mensuel',
+    'yearly_revenue' => 'Revenu annuel',
 
     'add_language' => 'Ajouter une langue',
     'edit_language' => 'Modifier la langue',
@@ -108,8 +108,8 @@ return [
     'add_show' => 'Ajouter un spectacle',
     'edit_show' => 'Modifier le spectacle',
     'show_name' => 'Afficher le nom',
-    'show_sort_info' => 'Trier les informations', 
-    'show_poster' => 'Affiche de spectacle',    
+    'show_sort_info' => 'Trier les informations',
+    'show_poster' => 'Affiche de spectacle',
 
     'add_season' => 'Ajouter la saison',
     'edit_season' => 'Modifier la saison',
@@ -175,7 +175,7 @@ return [
     'filter_by_gateway' => 'Filtrer par passerelle',
     'search_by_payment_id_email' => 'Rechercher par ID de paiement OU Email ...',
     'export_transactions' => 'Transactions d\'exportation',
-    
+
     'default_timezone' => 'Fuseau horaire par défaut',
     'default_language' => 'Langage par défaut',
     'site_style' => 'Style de site',
@@ -212,14 +212,14 @@ return [
     'my_subscription' => 'Mon abonnement',
     'current_plan' => 'Plan actuel',
     'upgrade_plan' => 'Plan de mise à niveau',
-    'last_invoice' => 'Dernière facture',    
-    'subscription_expires_on' => 'L\'inscription expire le', 
+    'last_invoice' => 'Dernière facture',
+    'subscription_expires_on' => 'L\'inscription expire le',
 
 
     //Other
     'share_text' => 'Partager',
     'up_next' => 'Suivant',
-    'view_all' => 'Voir tout',   
+    'view_all' => 'Voir tout',
     'forgot_password' => 'Mot de passe oublié',
     'reset_password' => 'réinitialiser le mot de passe',
     'latest_movies' => 'Derniers films',
@@ -283,12 +283,20 @@ return [
     'account_banned' => 'Votre compte a été banni!',
     'account_created_successfully' => 'Merci! Votre compte à été créé avec succès.',
 
-    'gdpr_cookie_consent' => 'Consentement aux cookies GDPR',    
+    'gdpr_cookie_consent' => 'Consentement aux cookies GDPR',
     'gdpr_cookie_title' => 'Titre du consentement GDPR',
     'gdpr_cookie_text' => 'Texte de consentement GDPR',
     'gdpr_cookie_url' => 'URL de confidentialité GDPR',
     'gdpr_continue' => 'Continuer',
     'gdpr_learn_more' => 'Apprendre encore plus',
+
+    'radio' => 'radio',
+    'radio_cat' => 'Radio Categorie',
+    'radio_channel' => 'Chaîne Radio',
+
+    'podcast' => 'podcast',
+    'podcast_cat' => 'podcast Categorie',
+    'podcast_channel' => 'Chaîne podcast',
 
     'live_tv' => 'En direct',
     'live_tv_category' => 'Catégorie',
@@ -352,7 +360,7 @@ return [
     'notification_show_msg' => 'Pour ouvrir directement un spectacle unique lorsque vous cliquez sur la notification',
     'notification_sport_msg' => 'Pour ouvrir directement un seul sport lorsque vous cliquez sur la notification',
     'notification_tv_msg' => 'Pour ouvrir directement un seul téléviseur lorsque vous cliquez sur la notification',
-    
+
     'android_external_link' => 'lien externe',
     'optional' => 'Optionnelle',
     'or' => 'OU',
@@ -439,7 +447,7 @@ return [
     'facebook_login' => 'Facebook Login',
     'facebook_app_id' => 'Facebook App ID',
     'facebook_secret' => 'Facebook Client Secret',
-    
+
     'tv_embed_code' => 'Code intégré TV',
     'youtube_url' => 'Youtube URL',
     'server_1_url' => 'Serveur 1 URL',
@@ -461,7 +469,7 @@ return [
     'trailer_url' => 'URL de la bande-annonce',
     'watch_triler' => 'Regarde la bande-annonce',
 
-    'my_watchlist' => 'Ma liste de surveillance',    
+    'my_watchlist' => 'Ma liste de surveillance',
     'add_to_watchlist' => 'Ajouter à la liste de surveillance',
     'remove_from_watchlist' => 'Supprimer de la liste de surveillance',
     'add_watchlist_msg' => 'Ajouté avec succès à la liste de surveillance',
@@ -530,7 +538,7 @@ return [
 
     'category' => 'Catégorie',
     'languages' => 'Langues',
-    
+
     'pay_with_instamojo' => 'Payer avec Instamojo',
     'pay_with_payu' => 'Payer avec Payu',
     'pay_with_mollie' => 'Payer avec Mollie',

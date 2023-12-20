@@ -44,12 +44,12 @@ return [
     'payment' => 'Payment',
 
     //Top Menu
-    'profile' => 'Profile', 
-    'logout' => 'Logout', 
+    'profile' => 'Profile',
+    'logout' => 'Logout',
 
     //Footer
-    'copyright' => 'Copyright', 
-    'all_rights' => 'All Rights Reserved', 
+    'copyright' => 'Copyright',
+    'all_rights' => 'All Rights Reserved',
 
     //Common Text
     'save' => 'Save',
@@ -61,33 +61,33 @@ return [
     'remove' => 'Remove',
     'dlt_warning_text' => 'Are you sure? You will not be able to recover this.',
     'recommended_resolution' => 'Recommended resolution',
-    'filter_by_lang' => 'Filter by Language',  
+    'filter_by_lang' => 'Filter by Language',
     'search_by_title' => 'Search By Title...',
     'select_lang' => 'Select Language',
     'select_genres' => 'Select Genres...',
     'select_show' => 'Select Show',
     'filter_by_show' => 'Filter by Shows',
-    'filter_by_cat' => 'Filter by Category',  
+    'filter_by_cat' => 'Filter by Category',
     'description' => 'Description',
     'release_date' => 'Release Date',
     'duration' => 'Duration',
     'video_upload_type' => 'Video Upload Type',
     'video_file' => 'Video File',
     'video_url' => 'Video URL',
-    'video_embed_code' => 'Video Embed Code', 
+    'video_embed_code' => 'Video Embed Code',
     'type' => 'Type',
-    'filter_by_plan' => 'Filter by Plan', 
-    'title' => 'Title', 
+    'filter_by_plan' => 'Filter by Plan',
+    'title' => 'Title',
 
 
     //Pages
-    'users_plan_statastics' => 'Users Plan Statistics', 
-    'current_year' => 'Current Year', 
+    'users_plan_statastics' => 'Users Plan Statistics',
+    'current_year' => 'Current Year',
     'this_year' => 'This Year',
-    'daily_revenue' => 'Daily Revenue', 
-    'weekly_revenue' => 'Weekly Revenue', 
-    'monthly_revenue' => 'Monthly Revenue', 
-    'yearly_revenue' => 'Yearly Revenue',  
+    'daily_revenue' => 'Daily Revenue',
+    'weekly_revenue' => 'Weekly Revenue',
+    'monthly_revenue' => 'Monthly Revenue',
+    'yearly_revenue' => 'Yearly Revenue',
 
     'add_language' => 'Add Language',
     'edit_language' => 'Edit Language',
@@ -102,14 +102,14 @@ return [
     'add_movie' => 'Add Movie',
     'edit_movie' => 'Edit Movie',
     'movie_name' => 'Movie Name',
-    'movie_poster' => 'Movie Poster',    
+    'movie_poster' => 'Movie Poster',
     'movie_access' => 'Movie Access',
 
     'add_show' => 'Add Show',
     'edit_show' => 'Edit Show',
     'show_name' => 'Show Name',
-    'show_sort_info' => 'Sort Info', 
-    'show_poster' => 'Show Poster',    
+    'show_sort_info' => 'Sort Info',
+    'show_poster' => 'Show Poster',
 
     'add_season' => 'Add Season',
     'edit_season' => 'Edit Season',
@@ -139,7 +139,7 @@ return [
     'slider_title' => 'Slider Title',
     'slider_image' => 'Slider Image',
     'slider_url' => 'URL',
- 
+
     'add_user' => 'Add User',
     'edit_user' => 'Edit User',
     'export_user' => 'Export Users',
@@ -175,7 +175,7 @@ return [
     'filter_by_gateway' => 'Filter by Gateway',
     'search_by_payment_id_email' => 'Search By Payment ID OR Email...',
     'export_transactions' => 'Export Transactions',
-    
+
     'default_timezone' => 'Default Timezone',
     'default_language' => 'Default Language',
     'site_style' => 'Site Styling',
@@ -212,14 +212,14 @@ return [
     'my_subscription' => 'My Subscription',
     'current_plan' => 'Current Plan',
     'upgrade_plan' => 'Upgrade Plan',
-    'last_invoice' => 'Last Invoice',    
-    'subscription_expires_on' => 'Subscription expires on', 
+    'last_invoice' => 'Last Invoice',
+    'subscription_expires_on' => 'Subscription expires on',
 
 
     //Other
     'share_text' => 'Share',
     'up_next' => 'Up Next',
-    'view_all' => 'View All',   
+    'view_all' => 'View All',
     'forgot_password' => 'Forgot Password',
     'reset_password' => 'Reset Password',
     'latest_movies' => 'Latest Movies',
@@ -283,12 +283,23 @@ return [
     'account_banned' => 'You account has been banned!',
     'account_created_successfully' => 'Thanks! your account has been successfully created.',
 
-    'gdpr_cookie_consent' => 'GDPR Cookie Consent',    
+    'gdpr_cookie_consent' => 'GDPR Cookie Consent',
     'gdpr_cookie_title' => 'GDPR Consent Title',
     'gdpr_cookie_text' => 'GDPR Consent Text',
     'gdpr_cookie_url' => 'GDPR Privacy URL',
     'gdpr_continue' => 'Continue',
     'gdpr_learn_more' => 'Learn more',
+
+
+    'radio' => 'radio',
+    'radio_cat' => 'Radio Category',
+    'radio_channel' => 'Radio Channel',
+
+
+    'podcast' => 'podcast',
+    'podcast_cat' => 'podcast Category',
+    'podcast_channel' => 'podcast Channel',
+
 
     'live_tv' => 'Live TV',
     'live_tv_category' => 'TV Category',
@@ -298,7 +309,7 @@ return [
     'live_tv_edit' => 'Edit Live TV',
     'live_tv_name' => 'TV Name',
     'live_tv_logo' => 'TV Logo',
-     
+
     'live_tv_add_category' => 'Add TV Category',
     'live_tv_edit_category' => 'Edit TV Category',
 
@@ -307,6 +318,7 @@ return [
     'live_tv_thumb_url' => 'Thumb & URL',
     'live_tv_stream_type' => 'Stream Type',
     'live_tv_url' => 'TV URL',
+
 
     'ad_title' => 'Ad Title',
     'ad_size' => 'Ad Size',
@@ -352,7 +364,7 @@ return [
     'notification_show_msg' => 'To directly open single show when click on notification',
     'notification_sport_msg' => 'To directly open single sport when click on notification',
     'notification_tv_msg' => 'To directly open single tv when click on notification',
-    
+
     'android_external_link' => 'External Link',
     'optional' => 'Optional',
     'or' => 'OR',
@@ -439,7 +451,7 @@ return [
     'facebook_login' => 'Facebook Login',
     'facebook_app_id' => 'Facebook App ID',
     'facebook_secret' => 'Facebook Client Secret',
-    
+
     'tv_embed_code' => 'TV Embed Code',
     'youtube_url' => 'Youtube URL',
     'server_1_url' => 'Server 1 URL',
@@ -461,7 +473,7 @@ return [
     'trailer_url' => 'Trailer URL',
     'watch_triler' => 'Watch Trailer',
 
-    'my_watchlist' => 'My Watchlist',    
+    'my_watchlist' => 'My Watchlist',
     'add_to_watchlist' => 'Add to Watchlist',
     'remove_from_watchlist' => 'Remove from Watchlist',
     'add_watchlist_msg' => 'Successfully added to watchlist',
@@ -511,7 +523,7 @@ return [
     'series_access' => 'Series Access',
     'display_on' => 'Display On',
     'add_section' => 'Add Section',
-    'edit_section' => 'Edit Section',    
+    'edit_section' => 'Edit Section',
     'home_section_title' => 'Home Section Title',
     'payment_gateway' => 'Payment Gateway',
     'gateway_name' => 'Gateway Name',
@@ -530,7 +542,7 @@ return [
 
     'category' => 'Category',
     'languages' => 'Languages',
-    
+
     'pay_with_instamojo' => 'Pay with Instamojo',
     'pay_with_payu' => 'Pay with Payu',
     'pay_with_mollie' => 'Pay with Mollie',
