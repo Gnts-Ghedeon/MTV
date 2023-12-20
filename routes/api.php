@@ -42,6 +42,7 @@ Route::post('/auth/login', [AuthController::class, 'loginUser']);
 Route::apiResources([
     'movies'=> MoviesController::class,
     'livestv'=>LiveTvController::class,
+
     'seasons'=>SaisonController::class,
     'subsplan'=>SubsPlanController::class,
     'languages'=>LanguagesController::class,
