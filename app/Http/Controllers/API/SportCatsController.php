@@ -17,9 +17,9 @@ class SportCatsController extends Controller
      */
     public function index(Request $request)
     {
-        $sportcat = SportsCategory::latest()->paginate(25);
+        $sportcat = SportsCategory::all();
 
-        return $sportcat;
+        return response()->json($sportcat, 200);
     }
 
     /**
@@ -46,9 +46,14 @@ class SportCatsController extends Controller
      */
     public function show($id)
     {
-        $sportcat = SportsCategory::findOrFail($id);
+        $sportcat = SportsCategory::find($id);
 
-        return $sportcat;
+        if($sportcat){
+            return response()->json($sportcat, 200); }
+        else
+        {
+            return response()->json(["message"=>"aucune entrée"], 404 );
+        }
     }
 
     /**
@@ -77,8 +82,18 @@ class SportCatsController extends Controller
      */
     public function destroy($id)
     {
-        SportsCategory::destroy($id);
+        $test=SportsCategory::destroy($id);
 
-        return response()->json(null, 204);
+        if($test){
+            return response()->json(["message"=>" succes"], 204);
+        }
+        else{
+        {
+
+            return response()->json(["message"=>"erreur de suppression, rassurez vous que cet id existe"], );
+
+        }
+
+        };
     }
 }

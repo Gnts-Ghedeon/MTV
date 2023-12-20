@@ -82,7 +82,7 @@ class LiveTvController extends Controller
         if($test){
             return response()->json($livetv, 200); }
         else{
-            return response()->json(["message"=>"aucune entrée"], );
+            return response()->json(["message"=>"aucune entrée"], 404);
         }
     }
 

@@ -17,9 +17,9 @@ class SeriesController extends Controller
      */
     public function index(Request $request)
     {
-        $series = Series::latest()->paginate(25);
+        $series = Series::all();
 
-        return $series;
+        return response()->json($series,200);
     }
 
     /**
@@ -46,9 +46,14 @@ class SeriesController extends Controller
      */
     public function show($id)
     {
-        $series = Series::findOrFail($id);
+        $series = Series::find($id);
 
-        return $series;
+        if($series){
+            return response()->json($series, 200); }
+        else
+        {
+            return response()->json(["message"=>"aucune entrée"], 404 );
+        }
     }
 
     /**
@@ -77,8 +82,18 @@ class SeriesController extends Controller
      */
     public function destroy($id)
     {
-        Series::destroy($id);
+        $test=Series::destroy($id);
 
-        return response()->json(null, 204);
+        if($test){
+            return response()->json(["message"=>" succes"], 204);
+        }
+        else{
+        {
+
+            return response()->json(["message"=>"erreur de suppression, rassurez vous que cet id existe"], );
+
+        }
+
+        };
     }
 }

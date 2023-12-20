@@ -17,9 +17,9 @@ class WatchListController extends Controller
      */
     public function index(Request $request)
     {
-        $watchlist = Watchlist::latest()->paginate(25);
+        $watchlist = Watchlist::all();
 
-        return $watchlist;
+        return response()->json($watchlist, 200);
     }
 
     /**
@@ -48,7 +48,12 @@ class WatchListController extends Controller
     {
         $watchlist = Watchlist::findOrFail($id);
 
-        return $watchlist;
+        if($watchlist){
+            return response()->json($watchlist, 200); }
+        else
+        {
+            return response()->json(["message"=>"aucune entrée"], 404 );
+        }
     }
 
     /**
@@ -77,8 +82,18 @@ class WatchListController extends Controller
      */
     public function destroy($id)
     {
-        Watchlist::destroy($id);
+        $test=Watchlist::destroy($id);
 
-        return response()->json(null, 204);
+        if($test){
+            return response()->json(["message"=>" succes"], 204);
+        }
+        else{
+        {
+
+            return response()->json(["message"=>"erreur de suppression, rassurez vous que cet id existe"], );
+
+        }
+
+        };
     }
 }

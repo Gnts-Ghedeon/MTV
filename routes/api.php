@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\API\ActordirsController;
 use App\Http\Controllers\API\AuthController;
+use App\Http\Controllers\API\EpisodesController;
 use App\Http\Controllers\API\GenresController;
 use App\Http\Controllers\API\LanguagesController;
 use App\Http\Controllers\API\LiveTvController;
@@ -11,6 +12,7 @@ use App\Http\Controllers\API\SeriesController;
 use App\Http\Controllers\API\SettingsController;
 use App\Http\Controllers\API\SportsController;
 use App\Http\Controllers\API\SubsPlanController;
+use App\Http\Controllers\API\WatchListController;
 use App\Movies;
 use App\Series;
 use App\Sports;
@@ -41,16 +43,17 @@ Route::post('/auth/login', [AuthController::class, 'loginUser']);
 
 Route::apiResources([
     'movies'=> MoviesController::class,
-    'livestv'=>LiveTvController::class,
-
+    'genres'=>GenresController::class,
+    'series'=>SeriesController::class,
     'seasons'=>SaisonController::class,
+    'episodes'=>EpisodesController::class,
+    'livestv'=>LiveTvController::class,
+    'sports'=>SportsController::class,
+    'sportcats'=>SportsCategory::class,
+    'views'=>WatchListController::class,
     'subsplan'=>SubsPlanController::class,
     'languages'=>LanguagesController::class,
     'actorsdirs'=>ActordirsController::class,
-    'sports'=>SportsController::class,
-    'sportcats'=>SportsCategory::class,
-    'genres'=>GenresController::class,
-    'series'=>SeriesController::class,
     'settings'=>SettingsController::class,
 
 ]);

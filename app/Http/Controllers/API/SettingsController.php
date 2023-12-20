@@ -17,9 +17,10 @@ class SettingsController extends Controller
      */
     public function index(Request $request)
     {
-        $settings = Settings::latest()->paginate(25);
+        $settings = Settings::all();
 
-        return $settings;
+        return response()->json($settings, 200);
+
     }
 
     /**
@@ -46,9 +47,14 @@ class SettingsController extends Controller
      */
     public function show($id)
     {
-        $setting = Settings::findOrFail($id);
+        $setting = Settings::find($id);
 
-        return $setting;
+        if($setting){
+            return response()->json($setting, 200); }
+        else
+        {
+            return response()->json(["message"=>"aucune entrée"], 404 );
+        }
     }
 
     /**
@@ -77,8 +83,19 @@ class SettingsController extends Controller
      */
     public function destroy($id)
     {
-        Settings::destroy($id);
+        $test=Settings::destroy($id);
 
-        return response()->json(null, 204);
+
+        if($test){
+            return response()->json(["message"=>" succes"], 204);
+        }
+        else{
+        {
+
+            return response()->json(["message"=>"erreur de suppression, rassurez vous que cet id existe"], );
+
+        }
+
+        };
     }
 }

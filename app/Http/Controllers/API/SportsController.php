@@ -17,9 +17,9 @@ class SportsController extends Controller
      */
     public function index(Request $request)
     {
-        $sport = Sports::latest()->paginate(25);
+        $sport = Sports::all();
 
-        return $sport;
+        return response()->json($sport, 200);
     }
 
     /**
@@ -46,9 +46,14 @@ class SportsController extends Controller
      */
     public function show($id)
     {
-        $sport = Sports::findOrFail($id);
+        $sport = Sports::find($id);
 
-        return $sport;
+        if($sport){
+            return response()->json($sport, 200); }
+        else
+        {
+            return response()->json(["message"=>"aucune entrée"], 404 );
+        }
     }
 
     /**
@@ -77,8 +82,18 @@ class SportsController extends Controller
      */
     public function destroy($id)
     {
-        Sports::destroy($id);
+        $test=Sports::destroy($id);
 
-        return response()->json(null, 204);
+        if($test){
+            return response()->json(["message"=>" succes"], 204);
+        }
+        else{
+        {
+
+            return response()->json(["message"=>"erreur de suppression, rassurez vous que cet id existe"], );
+
+        }
+
+        };
     }
 }

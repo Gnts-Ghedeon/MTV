@@ -17,9 +17,9 @@ class SaisonController extends Controller
      */
     public function index(Request $request)
     {
-        $season = Season::latest()->paginate(25);
+        $season = Season::all();
 
-        return $season;
+        return response()->json($season,200);
     }
 
     /**
@@ -46,9 +46,14 @@ class SaisonController extends Controller
      */
     public function show($id)
     {
-        $season = Season::findOrFail($id);
+        $season = Season::find($id);
 
-        return $season;
+        if($season){
+            return response()->json($season, 200); }
+        else
+        {
+            return response()->json(["message"=>"aucune entrée"], 404 );
+        }
     }
 
     /**
@@ -77,8 +82,19 @@ class SaisonController extends Controller
      */
     public function destroy($id)
     {
-        Season::destroy($id);
+        $test=Season::destroy($id);
 
-        return response()->json(null, 204);
+        //return response()->json(null, 204);
+        if($test){
+            return response()->json(["message"=>" succes"], 204);
+        }
+        else{
+        {
+
+            return response()->json(["message"=>"erreur de suppression, rassurez vous que cet id existe"], );
+
+        }
+
+        };
     }
 }

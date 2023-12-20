@@ -17,9 +17,9 @@ class SubsPlanController extends Controller
      */
     public function index(Request $request)
     {
-        $subsplan = SubscriptionPlan::latest()->paginate(25);
+        $subsplan = SubscriptionPlan::all();
 
-        return $subsplan;
+        return response()->json($subsplan, 200);
     }
 
     /**
@@ -48,7 +48,12 @@ class SubsPlanController extends Controller
     {
         $subsplan = SubscriptionPlan::findOrFail($id);
 
-        return $subsplan;
+        if($subsplan){
+            return response()->json($subsplan, 200); }
+        else
+        {
+            return response()->json(["message"=>"aucune entrée"], 404 );
+        }
     }
 
     /**
@@ -77,8 +82,18 @@ class SubsPlanController extends Controller
      */
     public function destroy($id)
     {
-        SubscriptionPlan::destroy($id);
+        $test=SubscriptionPlan::destroy($id);
 
-        return response()->json(null, 204);
+        if($test){
+            return response()->json(["message"=>" succes"], 204);
+        }
+        else{
+        {
+
+            return response()->json(["message"=>"erreur de suppression, rassurez vous que cet id existe"], );
+
+        }
+
+        };
     }
 }

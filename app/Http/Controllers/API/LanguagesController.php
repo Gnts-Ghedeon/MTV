@@ -19,7 +19,7 @@ class LanguagesController extends Controller
     {
         $languages = Language::all();
 
-        return $languages;
+        return response()->json($languages,200);
     }
 
     /**
@@ -95,6 +95,7 @@ class LanguagesController extends Controller
             return response()->json(["message"=>"erreur de suppression, rassurez vous que cet id existe"], );
 
         }
+
         };
     }
 }
