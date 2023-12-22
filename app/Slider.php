@@ -10,8 +10,6 @@ class Slider extends Model
 
     protected $fillable = ['slider_title','slider_image'];
 
+	public $timestamps = false;
 
-	public $timestamps = false; 
-	 
-	 
 }

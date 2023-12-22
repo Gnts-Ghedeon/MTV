@@ -12,9 +12,11 @@ use App\Http\Controllers\API\RadiosCotroller;
 use App\Http\Controllers\API\SaisonController;
 use App\Http\Controllers\API\SeriesController;
 use App\Http\Controllers\API\SettingsController;
+use App\Http\Controllers\API\SliderCotroller;
 use App\Http\Controllers\API\SportsController;
 use App\Http\Controllers\API\SubsPlanController;
 use App\Http\Controllers\API\WatchListController;
+use App\Http\Controllers\PodcastController;
 use App\Movies;
 use App\Series;
 use App\Sports;
@@ -45,21 +47,25 @@ Route::post('/auth/login', [AuthController::class, 'loginUser']);
 
 Route::apiResources([
 
-    'movies'=> MoviesController::class,
-    'radios' =>RadiosCotroller::class,
-    'podcast' => PodcastsCotroller::class,
-    'genres'=>GenresController::class,
-    'series'=>SeriesController::class,
-    'seasons'=>SaisonController::class,
-    'episodes'=>EpisodesController::class,
-    'livestv'=>LiveTvController::class,
-    'sports'=>SportsController::class,
-    'sportcats'=>SportsCategory::class,
-    'views'=>WatchListController::class,
-    'subsplan'=>SubsPlanController::class,
-    'languages'=>LanguagesController::class,
-    'actorsdirs'=>ActordirsController::class,
-    'settings'=>SettingsController::class,
+    'movies'     =>   MoviesController::class,
+    'radios'     =>   RadiosCotroller::class,
+    'podcast'    =>   PodcastsCotroller::class,
+    'catPodcats' =>   PodcastController::class,
+    'catRadios'  =>   RadiosCotroller::class,
+    'genres'     =>   GenresController::class,
+    'sliders'    =>   SliderCotroller::class,
+    'series'     =>   SeriesController::class,
+    'seasons'    =>   SaisonController::class,
+    'episodes'   =>   EpisodesController::class,
+    'livestv'    =>   LiveTvController::class,
+    'sports'     =>   SportsController::class,
+    'sportcats'  =>   SportsCategory::class,
+    'views'      =>   WatchListController::class,
+    'subsplan'   =>   SubsPlanController::class,
+    'languages'  =>   LanguagesController::class,
+    'actors'     =>   ActordirsController::class,
+    'directors'  =>   ActordirsController::class,
+    'settings'   =>   SettingsController::class,
 
 ]);
 
