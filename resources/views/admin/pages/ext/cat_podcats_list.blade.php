@@ -12,7 +12,7 @@
 
                 <div class="row">
                 <div class="col-md-3">
-                  <a href="{{URL::to('admin/radiocats/add_radios')}}" class="btn btn-success btn-md waves-effect waves-light m-b-20" data-toggle="tooltip" title="ajouter categ radio"><i class="fa fa-plus"></i> Ajouter nouvelle categuorie </a>
+                  <a href="{{URL::to('admin/podcastcats/add_catpod/')}}" class="btn btn-success btn-md waves-effect waves-light m-b-20" data-toggle="tooltip" title="ajouter categ radio"><i class="fa fa-plus"></i> Ajouter nouvelle categuorie </a>
                 </div>
               </div>
 
@@ -38,8 +38,8 @@
                       <td>{{ stripslashes($genres->category_name) }}</td>
                       <td>@if($genres->status==1)<span class="badge badge-success">{{trans('words.active')}}</span> @else<span class="badge badge-danger">{{trans('words.inactive')}}</span>@endif</td>
                       <td>
-                      <a href="{{ url('admin/radiocats/edit_radios/'.$genres->id) }}" class="btn btn-icon waves-effect waves-light btn-success m-b-5 m-r-5" data-toggle="tooltip" title="{{trans('words.edit')}}"> <i class="fa fa-edit"></i> </a>
-                      <a href="{{ url('admin/radiocats/delete/'.$genres->id) }}" class="btn btn-icon waves-effect waves-light btn-danger m-b-5" onclick="return confirm('{{trans('words.dlt_warning_text')}}')" data-toggle="tooltip" title="{{trans('words.remove')}}"> <i class="fa fa-remove"></i> </a>
+                      <a href="{{ url('admin/podcastcats/edit_catpod/'.$genres->id) }}" class="btn btn-icon waves-effect waves-light btn-success m-b-5 m-r-5" data-toggle="tooltip" title="{{trans('words.edit')}}"> <i class="fa fa-edit"></i> </a>
+                      <a href="{{ url('admin/podcastcats/delete/'.$genres->id) }}" class="btn btn-icon waves-effect waves-light btn-danger m-b-5" onclick="return confirm('{{trans('words.dlt_warning_text')}}')" data-toggle="tooltip" title="{{trans('words.remove')}}"> <i class="fa fa-remove"></i> </a>
                       </td>
                     </tr>
                    @endforeach

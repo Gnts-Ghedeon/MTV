@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use App\Models\PodcastCategory;
 use App\PodcastCategory as AppPodcastCategory;
@@ -8,8 +8,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 
-class PodcatCategCotroller extends Controller
-    {
+class WebPodcatCategCotroller extends MainAdminController
+{
 
 
     public function __construct()
@@ -20,7 +20,7 @@ class PodcatCategCotroller extends Controller
         check_verify_purchase();
 
     }
-    public function genres_list()    {
+    public function podcastcats_list()    {
 
         if(Auth::User()->usertype!="Admin" AND Auth::User()->usertype!="Sub_Admin")
         {
@@ -35,7 +35,7 @@ class PodcatCategCotroller extends Controller
 
         $genres_list = AppPodcastCategory::orderBy('category_name')->paginate(10);
 
-        return view('admin.pages.ext.cat_radio_list',compact('page_title','genres_list'));
+        return view('admin.pages.ext.cat_podcats_list',compact('page_title','genres_list'));
     }
 
     public function addCat()    {
@@ -129,21 +129,21 @@ class PodcatCategCotroller extends Controller
 
     public function delete($genre_id)
     {
-
+        //dd($genre_id); die;
         if(Auth::User()->usertype=="Admin" OR Auth::User()->usertype=="Sub_Admin")
         {
 
-        $genre = AppRadioCategory::findOrFail($genre_id);
+        $genre = AppPodcastCategory::findOrFail($genre_id);
 
         $genre->delete();
 
-        \Session::flash('flash_message', trans('words.deleted'));
+        Session::flash('flash_message', trans('words.deleted'));
 
         return redirect()->back();
         }
         else
         {
-            \Session::flash('flash_message', trans('words.access_denied'));
+            Session::flash('flash_message', trans('words.access_denied'));
 
             return redirect('admin/dashboard');
 

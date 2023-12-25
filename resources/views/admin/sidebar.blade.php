@@ -59,7 +59,7 @@
             <li class="has_sub">
                 <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-podcast"></i><span>Podcast</span><span class="menu-arrow"></span></a>
                 <ul class="list-unstyled">
-                <li class="{{classActivePath('podcats_category')}}"><a href="{{ URL::to('admin/podcast_category') }}" class="{{classActivePath('tv_category')}}"><i class="fa fa-tags"></i><span>{{trans('words.podcast_cat')}}</span></a></li>
+                <li class="{{classActivePath('podcastcats')}}"><a href="{{ URL::to('admin/podcastcats') }}" class="{{classActivePath('tv_category')}}"><i class="fa fa-tags"></i><span>{{trans('words.podcast_cat')}}</span></a></li>
                 <li class="{{classActivePath('podcast')}}"><a href="{{ URL::to('admin/podcast') }}" class="{{classActivePath('live_tv')}}"><i class="fa fa-list"></i><span>{{trans('words.podcast_channel')}}</span></a></li>
                 </ul>
             </li>

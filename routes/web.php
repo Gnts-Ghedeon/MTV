@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Admin\WebPodcatCategCotroller;
+use App\Http\Controllers\WebPodcastController;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
@@ -61,11 +63,12 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
     Route::get('radiocats/delete/{id}', 'WebRadioCatCotroller@delete');
 
     //CAT PODCATS
-    Route::get('podcastcats', 'WebRadioCatCotroller@genres_list');
-    Route::get('podcastcats/add_radios', 'WebRadioCatCotroller@addGenre');
-    Route::get('podcastcats/edit_radios/{id}', 'WebRadioCatCotroller@editGenre');
-    Route::post('podcastcats/add_edit_radios', 'WebRadioCatCotroller@addnew');
-    Route::get('podcastcats/delete/{id}', 'WebRadioCatCotroller@delete');
+    //Route::get('podcastcats', 'WebPodcastsCotroller@podcastcats_list');
+    Route::get('podcastcats', 'WebPodcatCategCotroller@podcastcats_list');
+    Route::get('podcastcats/add_catpod', 'WebPodcatCategCotroller@addCat');
+    Route::get('podcastcats/edit_catpod/{id}', 'WebPodcatCategCotroller@editCat');
+    Route::post('podcastcats/add_edit_catpod', 'WebPodcatCategCotroller@addnew');
+    Route::get('podcastcats/delete/{id}', 'WebPodcatCategCotroller@delete');
 
     //RADIO
     Route::get('radio', 'WebRadioCatCotroller@genres_list');
