@@ -1,11 +1,11 @@
 <div class="topbar">
-      <div class="topbar-left"> 
+      <div class="topbar-left">
         <a href="{{ URL::to('admin/dashboard') }}" class="logo">
           <span>
-            @if(getcong('site_logo')) 
+            @if(getcong('site_logo'))
             <img src="{{ URL::asset('/'.getcong('site_logo')) }}" alt="Site Logo" width="120">
             @else
-            <img src="{{ URL::asset('site_assets/images/logo.png') }}" alt="Site Logo" width="120">           
+            <img src="{{ URL::asset('site_assets/images/logo.png') }}" alt="Site Logo" width="120">
             @endif
           </span>
           <i class="mdi mdi-layers"></i></a> </div>
@@ -29,24 +29,24 @@
                             <a href="{{ URL::to('/') }}" class="right-bar-toggle" data-toggle="tooltip" title="Front End" target="_blank">
                                 <i class="fa fa-desktop"></i>
                             </a>
-                             
+
                         </li>
                     </ul>
                 </div>
                 <!-- End Notification bar -->
-            </li> 
+            </li>
               <li class="dropdown notification-list">
                 <a class="nav-link dropdown-toggle waves-effect waves-light nav-user" data-toggle="dropdown" href="#"
                   role="button" aria-haspopup="false" aria-expanded="false">
 
-                  @if(file_exists(public_path('upload/'.Auth::user()->user_image)))                                 
- 
+                  @if(file_exists(public_path('upload/'.Auth::user()->user_image)))
+
                   <img src="{{URL::to('upload/'.Auth::user()->user_image)}}" alt="person" class="rounded-circle" />
-                  
+
                   @else
-                      
+
                   <img src="{{ URL::asset('admin_assets/images/users/avatar-10.jpg') }}" alt="person" class="rounded-circle" />
-                  
+
                   @endif
 
                  </a>

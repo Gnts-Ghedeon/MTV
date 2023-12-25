@@ -50,7 +50,7 @@ Route::apiResources([
     'movies'     =>   MoviesController::class,
     'radios'     =>   RadiosCotroller::class,
     'podcast'    =>   PodcastsCotroller::class,
-    'catPodcats' =>   PodcastController::class,
+    //'catPodcats' =>   PodcastController::class,
     'catRadios'  =>   RadiosCotroller::class,
     'genres'     =>   GenresController::class,
     'sliders'    =>   SliderCotroller::class,
