@@ -60,6 +60,13 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
     Route::post('radiocats/add_edit_radios', 'WebRadioCatCotroller@addnew');
     Route::get('radiocats/delete/{id}', 'WebRadioCatCotroller@delete');
 
+    //CAT PODCATS
+    Route::get('podcastcats', 'WebRadioCatCotroller@genres_list');
+    Route::get('podcastcats/add_radios', 'WebRadioCatCotroller@addGenre');
+    Route::get('podcastcats/edit_radios/{id}', 'WebRadioCatCotroller@editGenre');
+    Route::post('podcastcats/add_edit_radios', 'WebRadioCatCotroller@addnew');
+    Route::get('podcastcats/delete/{id}', 'WebRadioCatCotroller@delete');
+
     //RADIO
     Route::get('radio', 'WebRadioCatCotroller@genres_list');
     Route::get('radio/add_radios', 'WebRadioCatCotroller@addGenre');
@@ -74,12 +81,7 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
     Route::post('podcast/add_edit_radios', 'WebRadioCatCotroller@addnew');
     Route::get('podcast/delete/{id}', 'WebRadioCatCotroller@delete');
 
-    //CAT PODCATS
-    Route::get('podcastcats', 'WebRadioCatCotroller@genres_list');
-    Route::get('podcastcats/add_radios', 'WebRadioCatCotroller@addGenre');
-    Route::get('podcastcats/edit_radios/{id}', 'WebRadioCatCotroller@editGenre');
-    Route::post('podcastcats/add_edit_radios', 'WebRadioCatCotroller@addnew');
-    Route::get('podcastcats/delete/{id}', 'WebRadioCatCotroller@delete');
+
 
 
 
