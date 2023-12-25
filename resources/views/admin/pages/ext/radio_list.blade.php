@@ -51,7 +51,9 @@
                   </thead>
                   <tbody>
                    @foreach($live_tv_list as $i => $live_tv_data)
-                    <tr>
+
+                   <tr>
+
                       <td>{{ stripslashes($live_tv_data->radio_name) }}</td>
                       <td>@if(isset($live_tv_data->radio_thumb)) <img src="{{URL::to('/'.$live_tv_data->radio_thumb)}}" alt="video image" class="thumb-xl bdr_radius"> @endif</td>
                       <td>{{ $live_tv_data->radio_access }}</td>
@@ -60,7 +62,9 @@
                       <a href="{{ url('admin/radio/add_edit_radios/'.$live_tv_data->id) }}" class="btn btn-icon waves-effect waves-light btn-success m-b-5 m-r-5" data-toggle="tooltip" title="{{trans('words.edit')}}"> <i class="fa fa-edit"></i> </a>
                       <a href="{{ url('admin/radio/delete/'.$live_tv_data->id) }}" class="btn btn-icon waves-effect waves-light btn-danger m-b-5" onclick="return confirm('{{trans('words.dlt_warning_text')}}')" data-toggle="tooltip" title="{{trans('words.remove')}}"> <i class="fa fa-remove"></i> </a>
                       </td>
+
                     </tr>
+
                    @endforeach
 
 
