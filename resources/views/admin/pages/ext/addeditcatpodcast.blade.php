@@ -44,12 +44,12 @@
                                                 </div>
                                 @endif
 
-                 {!! Form::open(array('url' => array('admin/radiocats/add_edit_radios'),'class'=>'form-horizontal','name'=>'category_form','id'=>'radio_form','role'=>'form','enctype' => 'multipart/form-data')) !!}
+                 {!! Form::open(array('url' => array('admin/podcastcats/add_edit_catpod'),'class'=>'form-horizontal','name'=>'category_form','id'=>'radio_form','role'=>'form','enctype' => 'multipart/form-data')) !!}
 
                   <input type="hidden" name="id" value="{{ isset($genre->id) ? $genre->id : null }}">
 
                   <div class="form-group row">
-                    <label class="col-sm-2 col-form-label">Designation</label>
+                    <label class="col-sm-2 col-form-label">Designation Categ</label>
                     <div class="col-sm-9">
                       <input type="text" name="genre_name" value="{{ isset($genre->category_name) ? stripslashes($genre->category_name) : null }}" class="form-control">
                     </div>

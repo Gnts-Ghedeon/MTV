@@ -7,6 +7,8 @@ use App\PodcastCategory as AppPodcastCategory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Str;
 
 class WebPodcatCategCotroller extends MainAdminController
 {
@@ -43,7 +45,7 @@ class WebPodcatCategCotroller extends MainAdminController
         if(Auth::User()->usertype!="Admin" AND Auth::User()->usertype!="Sub_Admin")
         {
 
-            \Session::flash('flash_message', trans('words.access_denied'));
+            Session::flash('flash_message', trans('words.access_denied'));
 
             return redirect('dashboard');
 
@@ -51,7 +53,7 @@ class WebPodcatCategCotroller extends MainAdminController
 
         $page_title="nouvelle categuorie";//trans('words.add_genre');
 
-        return view('admin.pages.ext.addeditcatradio',compact('page_title'));
+        return view('admin.pages.ext.addeditcatpodcast',compact('page_title'));
     }
 
 
@@ -64,7 +66,7 @@ class WebPodcatCategCotroller extends MainAdminController
                 'genre_name' => 'required'
                 );
 
-        $validator = \Validator::make($data,$rule);
+        $validator = Validator::make($data,$rule);
 
         if ($validator->fails())
         {
@@ -74,11 +76,11 @@ class WebPodcatCategCotroller extends MainAdminController
 
         if(!empty($inputs['id'])){
 
-            $genre_obj = AppRadioCategory::findOrFail($inputs['id']);
+            $genre_obj = AppPodcastCategory::findOrFail($inputs['id']);
 
         }else{
 
-            $genre_obj = new AppRadioCategory;
+            $genre_obj = new AppPodcastCategory();
 
         }
 
@@ -93,12 +95,12 @@ class WebPodcatCategCotroller extends MainAdminController
 
         if(!empty($inputs['id'])){
 
-            \Session::flash('flash_message', trans('words.successfully_updated'));
+            Session::flash('flash_message', trans('words.successfully_updated'));
 
             return \Redirect::back();
         }else{
 
-            \Session::flash('flash_message', trans('words.added'));
+            Session::flash('flash_message', trans('words.added'));
 
             return \Redirect::back();
 
@@ -121,9 +123,9 @@ class WebPodcatCategCotroller extends MainAdminController
 
         $page_title="MODIFIER LA CATEGuorie";//trans('words.edit_genre');
 
-        $genre = AppRadioCategory::findOrFail($genre_id);
+        $genre = AppPodcastCategory::findOrFail($genre_id);
 
-        return view('admin.pages.ext.addeditcatradio',compact('page_title','genre'));
+        return view('admin.pages.ext.addeditcatpodcast',compact('page_title','genre'));
 
     }
 
