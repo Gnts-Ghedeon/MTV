@@ -71,11 +71,13 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
     Route::get('podcastcats/delete/{id}', 'WebPodcatCategCotroller@delete');
 
     //RADIO
-    Route::get('radio', 'WebRadioCatCotroller@genres_list');
-    Route::get('radio/add_radios', 'WebRadioCatCotroller@addGenre');
-    Route::get('radio/edit_radios/{id}', 'WebRadioCatCotroller@editGenre');
-    Route::post('radio/add_edit_radios', 'WebRadioCatCotroller@addnew');
-    Route::get('radio/delete/{id}', 'WebRadioCatCotroller@delete');
+    Route::get('radio',  'WebRadioController@radio_list');
+    Route::get('radio/add_radios', 'WebRadioController@addTv');
+    Route::get('radio/edit_radios/{id}', 'WebRadioController@editTv');
+    Route::post('radio/add_edit_radios', 'WebRadioController@addnew');
+    Route::get('radio/delete/{id}', 'WebRadioController@delete');
+
+
 
     //PODCAST
     Route::get('podcast', 'WebRadioCatCotroller@genres_list');

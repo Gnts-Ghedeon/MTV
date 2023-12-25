@@ -40,7 +40,7 @@ class Radios extends Model
      * @var array
      */
     protected $fillable = [
-        'channel_cat_id', 'channel_access', 'radio_name', 'radio_slug', 'radio_description', 'radio_thumb', 'radio_url_type', 'radio_url', 'seo_title', 'seo_description', 'seo_keyword', 'views', 'status'
+        'radio_cat_id', 'radio_access', 'radio_name', 'radio_slug', 'radio_description', 'radio_thumb', 'radio_url_type', 'radio_url', 'seo_title', 'seo_description', 'seo_keyword', 'views', 'status'
     ];
 
     /**
@@ -58,7 +58,7 @@ class Radios extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'int', 'channel_cat_id' => 'int', 'channel_access' => 'string', 'radio_name' => 'string', 'radio_slug' => 'string', 'radio_description' => 'string', 'radio_thumb' => 'string', 'radio_url_type' => 'string', 'radio_url' => 'string', 'seo_title' => 'string', 'seo_description' => 'string', 'seo_keyword' => 'string', 'status' => 'int'
+        'id' => 'int', 'radio_cat_id' => 'int', 'radio_access' => 'string', 'radio_name' => 'string', 'radio_slug' => 'string', 'radio_description' => 'string', 'radio_thumb' => 'string', 'radio_url_type' => 'string', 'radio_url' => 'string', 'seo_title' => 'string', 'seo_description' => 'string', 'seo_keyword' => 'string', 'status' => 'int'
     ];
 
     /**

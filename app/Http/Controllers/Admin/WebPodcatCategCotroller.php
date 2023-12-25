@@ -13,7 +13,6 @@ use Illuminate\Support\Str;
 class WebPodcatCategCotroller extends MainAdminController
 {
 
-
     public function __construct()
     {
         $this->middleware('auth');
@@ -55,7 +54,6 @@ class WebPodcatCategCotroller extends MainAdminController
 
         return view('admin.pages.ext.addeditcatpodcast',compact('page_title'));
     }
-
 
     public function addnew(Request $request)
     {
