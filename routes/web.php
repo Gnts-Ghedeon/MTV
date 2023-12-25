@@ -56,7 +56,7 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
 
     Route::get('radiocats', 'WebRadioCatCotroller@genres_list');
     Route::get('radiocats/add_radios', 'WebRadioCatCotroller@addCat');
-    Route::get('radiocats/edit_radios/{id}', 'WebRadioCatCotroller@editGenre');
+    Route::get('radiocats/edit_radios/{id}', 'WebRadioCatCotroller@editCat');
     Route::post('radiocats/add_edit_radios', 'WebRadioCatCotroller@addnew');
     Route::get('radiocats/delete/{id}', 'WebRadioCatCotroller@delete');
 
