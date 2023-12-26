@@ -107,7 +107,6 @@ class WebPodcatCategCotroller extends MainAdminController
 
     }
 
-
     public function editCat($genre_id)
     {
         if(Auth::User()->usertype!="Admin" AND Auth::User()->usertype!="Sub_Admin")
