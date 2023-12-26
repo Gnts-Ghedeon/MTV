@@ -80,9 +80,9 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
     //PODCAST
 
     Route::get('podcast',  'WebPodcastController@podcast_list');
-    Route::get('podcast/add_radios', 'WebPodcastController@addPodcast');
-    Route::get('podcast/edit_radios/{id}', 'WebPodcastController@editPodcast');
-    Route::post('podcast/add_edit_radios', 'WebPodcastController@addnew');
+    Route::get('podcast/add_podcast', 'WebPodcastController@addPodcast');
+    Route::get('podcast/edit_podcast/{id}', 'WebPodcastController@editPodcast');
+    Route::post('podcast/add_edit_podcast', 'WebPodcastController@addnew');
     Route::get('podcast/delete/{id}', 'WebPodcastController@delete');
 
 

@@ -12,9 +12,13 @@ use App\Sports;
 use App\LiveTV;
 use App\SubscriptionPlan;
 use App\Transactions;
- 
- 
+
+
 use App\Http\Requests;
+use App\PodcastCategory;
+use App\Podcasts;
+use App\RadioCategory;
+use App\Radios;
 use Illuminate\Http\Request;
 
 //use GeoIP;
@@ -24,32 +28,43 @@ class DashboardController extends MainAdminController
 	public function __construct()
     {
 		 $this->middleware('auth');
-          
+
          parent::__construct();
          check_verify_purchase();
-         
+
     }
     public function index()
-    { 
+    {
             if(Auth::User()->usertype!="Admin" AND Auth::User()->usertype!="Sub_Admin")
             {
 
                 \Session::flash('flash_message', 'Access denied!');
 
                 return redirect('dashboard');
-                
+
              }
-           
-            
+
+
     	    $language = Language::count();
             $genres = Genres::count();
             $movies = Movies::count();
             $series = Series::count();
             $sports = Sports::count();
             $livetv = LiveTV::count();
-            $users = User::where('usertype','User')->count(); 
+            $users = User::where('usertype','User')->count();
             $plan = SubscriptionPlan::count();
             $transactions = Transactions::count();
+
+            //AD
+
+            $radio = Radios::count();
+            $catRadio = RadioCategory::count();
+
+            $podcast = Podcasts::count();
+            $catPodcast = PodcastCategory::count();
+
+
+            //END AD
 
             //Revenue
             $start_day = date('Y-m-d 00:00:00');
@@ -61,10 +76,10 @@ class DashboardController extends MainAdminController
             $weekly_amount= Transactions::whereBetween('date', array(strtotime($start_week), strtotime($finish_week)))->sum('payment_amount');
 
             $start_month = date('Y-m-d', strtotime('first day of this month'));
-            $finish_month = date('Y-m-d', strtotime('last day of this month'));             
+            $finish_month = date('Y-m-d', strtotime('last day of this month'));
             $monthly_amount = Transactions::whereBetween('date', array(strtotime($start_month), strtotime($finish_month)))->sum('payment_amount');
 
-            $current_year = date('Y'); 
+            $current_year = date('Y');
             $start_day_year = "January 1st, {$current_year}";
             $end_day_year = "December 31st, {$current_year}";
             $yearly_amount = Transactions::whereBetween('date', array(strtotime($start_day_year), strtotime($end_day_year)))->sum('payment_amount');
@@ -72,12 +87,12 @@ class DashboardController extends MainAdminController
             $plan_list = SubscriptionPlan::orderBy('id')->get();
 
             $page_title = trans('words.dashboard_text')?trans('words.dashboard_text'):'Dashboard';
-                
-            return view('admin.pages.dashboard',compact('page_title','users','language','genres','movies','series','sports','livetv','transactions','daily_amount','weekly_amount','monthly_amount','yearly_amount','plan_list'));
-                  
-        
+
+            return view('admin.pages.dashboard',compact('page_title','users','language','genres','movies','series','sports','livetv','transactions','daily_amount','weekly_amount','monthly_amount','yearly_amount','plan_list','podcast','radio','catPodcast','catRadio'));
+
+
     }
-	
-	 
-    	
+
+
+
 }
