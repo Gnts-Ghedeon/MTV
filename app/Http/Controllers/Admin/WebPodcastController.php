@@ -40,7 +40,7 @@ class WebPodcastController extends MainAdminController
 
          }
 
-        $page_title=trans('words.movies_text');
+        $page_title="Liste des Podcasts";//trans('words.movies_text');
 
         $language_list = Language::orderBy('language_name')->get();
 
