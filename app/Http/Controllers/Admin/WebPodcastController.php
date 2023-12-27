@@ -131,7 +131,7 @@ class WebPodcastController extends MainAdminController
 
          $movie_obj->pd_access = $inputs['video_access'];
          $movie_obj->pd_lang_id = $inputs['movie_language'];
-         $movie_obj->pd_genre_id = implode(',', $inputs['genres']);
+         $movie_obj->pd_cat_id = implode(',', $inputs['genres']);
          $movie_obj->pd_title = addslashes($inputs['video_title']);
          $movie_obj->pd_slug = $video_slug;
          $movie_obj->pd_description = addslashes($inputs['video_description']);
@@ -144,16 +144,16 @@ class WebPodcastController extends MainAdminController
              $save_to                =   public_path('/upload/images/'.$inputs['video_image_thumb']);
              grab_image($image_source,$save_to);
 
-            $movie_obj->video_image_thumb = 'upload/images/'.$inputs['video_image_thumb'];
+            $movie_obj->pd_image_thumb = 'upload/images/'.$inputs['video_image_thumb'];
 
          }
          else
          {
-            $movie_obj->video_image_thumb = $inputs['video_image_thumb'];
+            $movie_obj->pd_image_thumb = $inputs['video_image_thumb'];
 
          }
 
-         $movie_obj->video_image = $inputs['video_image'];
+         $movie_obj->pd_image = $inputs['video_image'];
          $movie_obj->imdb_id = $inputs['imdb_id'];
          $movie_obj->imdb_votes = $inputs['imdb_votes'];
          $movie_obj->status = $inputs['status'];
