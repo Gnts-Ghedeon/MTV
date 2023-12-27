@@ -62,6 +62,7 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
     Route::post('radiocats/add_edit_radios', 'WebRadioCatCotroller@addnew');
     Route::get('radiocats/delete/{id}', 'WebRadioCatCotroller@delete');
 
+
     //CAT PODCATS
     Route::get('podcastcats', 'WebPodcatCategCotroller@podcastcats_list');
     Route::get('podcastcats/add_catpod', 'WebPodcatCategCotroller@addCat');
@@ -84,8 +85,6 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
     Route::get('podcast/edit_podcast/{id}', 'WebPodcastController@editPodcast');
     Route::post('podcast/add_edit_podcast', 'WebPodcastController@addnew');
     Route::get('podcast/delete/{id}', 'WebPodcastController@delete');
-
-
 
 
 

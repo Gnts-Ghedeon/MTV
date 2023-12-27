@@ -46,12 +46,14 @@
             {{-- Radio --}}
             @if(getcong('menu_livetv'))
             <li class="has_sub">
-              <a href="javascript:void(0);" class="waves-effect"><i class="fa-solid fa-waveform"></i><span>Radio</span><span class="menu-arrow"></span></a>
+              <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-music"></i><span>Radio</span><span class="menu-arrow"></span></a>
               <ul class="list-unstyled">
                 <li class="{{classActivePath('radio_category')}}"><a href="{{ URL::to('admin/radiocats') }}" class="{{classActivePath('radio_category')}}"><i class="fa fa-tags"></i><span>{{trans('words.radio_cat')}}</span></a></li>
                 <li class="{{classActivePath('radio')}}"><a href="{{ URL::to('admin/radio') }}" class="{{classActivePath('radio')}}"><i class="fa fa-list"></i><span>{{trans('words.radio_channel')}}</span></a></li>
                </ul>
             </li>
+
+
             @endif
 
             {{-- Podscat--}}
@@ -150,6 +152,7 @@
             @endif
 
             @if(getcong('menu_livetv'))
+
             <li class="has_sub">
               <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-tv"></i><span>{{trans('words.live_tv')}}</span><span class="menu-arrow"></span></a>
               <ul class="list-unstyled">
@@ -157,7 +160,9 @@
                 <li class="{{classActivePath('live_tv')}}"><a href="{{ URL::to('admin/live_tv') }}" class="{{classActivePath('live_tv')}}"><i class="fa fa-list"></i><span>{{trans('words.tv_channel')}}</span></a></li>
                </ul>
             </li>
+
             @endif
+
             <li class="has_sub">
               <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-sliders"></i><span>{{trans('words.home')}}</span><span class="menu-arrow"></span></a>
               <ul class="list-unstyled">

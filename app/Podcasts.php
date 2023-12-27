@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * @property string $video_access
+ * @property string $pd_access
  * @property string $pd_genre_id
  * @property string $pd_title
  * @property string $duration
@@ -50,7 +50,7 @@ class Podcasts extends Model
      * @var array
      */
     protected $fillable = [
-        'video_access', 'pd_genre_id', 'pd_title', 'duration', 'pd_description', 'pd_slug', 'pd_image_thumb', 'pd_image', 'video_quality', 'pd_url', 'download_enable', 'download_url', 'imdb_id', 'imdb_rating', 'imdb_votes', 'seo_title', 'seo_description', 'seo_keyword', 'views', 'content_rating', 'status', 'created_at', 'updated_at'
+        'pd_access', 'pd_genre_id', 'pd_title', 'duration', 'pd_description', 'pd_slug', 'pd_image_thumb', 'pd_image', 'video_quality', 'pd_url', 'download_enable', 'download_url', 'imdb_id', 'imdb_rating', 'imdb_votes', 'seo_title', 'seo_description', 'seo_keyword', 'views', 'content_rating', 'status', 'created_at', 'updated_at'
     ];
 
     /**
@@ -68,7 +68,7 @@ class Podcasts extends Model
      * @var array
      */
     protected $casts = [
-        'video_access' => 'string', 'pd_genre_id' => 'string', 'pd_title' => 'string', 'duration' => 'string', 'pd_description' => 'string', 'pd_slug' => 'string', 'pd_image_thumb' => 'string', 'pd_image' => 'string', 'video_quality' => 'int', 'pd_url' => 'string', 'download_enable' => 'int', 'download_url' => 'string', 'imdb_id' => 'string', 'imdb_rating' => 'string', 'imdb_votes' => 'string', 'seo_title' => 'string', 'seo_description' => 'string', 'seo_keyword' => 'string', 'content_rating' => 'string', 'status' => 'int', 'created_at' => 'timestamp', 'updated_at' => 'timestamp'
+        'pd_access' => 'string', 'pd_genre_id' => 'string', 'pd_title' => 'string', 'duration' => 'string', 'pd_description' => 'string', 'pd_slug' => 'string', 'pd_image_thumb' => 'string', 'pd_image' => 'string', 'video_quality' => 'int', 'pd_url' => 'string', 'download_enable' => 'int', 'download_url' => 'string', 'imdb_id' => 'string', 'imdb_rating' => 'string', 'imdb_votes' => 'string', 'seo_title' => 'string', 'seo_description' => 'string', 'seo_keyword' => 'string', 'content_rating' => 'string', 'status' => 'int', 'created_at' => 'timestamp', 'updated_at' => 'timestamp'
     ];
 
     /**

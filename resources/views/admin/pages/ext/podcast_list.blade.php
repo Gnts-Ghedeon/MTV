@@ -26,7 +26,7 @@
                     {!! Form::close() !!}
                   </div>
                 <div class="col-md-3">
-                  <a href="{{URL::to('admin/podcast/add_podcast')}}" class="btn btn-success btn-md waves-effect waves-light m-b-20 mt-2" data-toggle="tooltip" title="{{trans('words.add_movie')}}"><i class="fa fa-plus"></i> {{trans('words.add_movie')}}</a>
+                  <a href="{{URL::to('admin/podcast/add_podcast')}}" class="btn btn-success btn-md waves-effect waves-light m-b-20 mt-2" data-toggle="tooltip" title="Ajouter un nouveau podcast"><i class="fa fa-plus"></i> Nouveau Podcast</a>
                 </div>
               </div>
 

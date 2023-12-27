@@ -55,7 +55,7 @@ class WebRadioCatCotroller extends MainAdminController
 
         }
 
-        $page_title="nouvelle categuorie";//trans('words.add_genre');
+        $page_title="nouvelle categorie radio";//trans('words.add_genre');
 
         return view('admin.pages.ext.addeditcatradio',compact('page_title'));
     }

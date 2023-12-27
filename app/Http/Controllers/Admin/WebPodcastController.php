@@ -40,7 +40,7 @@ class WebPodcastController extends MainAdminController
 
          }
 
-        $page_title= "Liste des Podcasts";//trans('words.movies_text');
+        $page_title=trans('words.movies_text');
 
         $language_list = Language::orderBy('language_name')->get();
 
@@ -68,7 +68,7 @@ class WebPodcastController extends MainAdminController
 
 
 
-    public function addMovie()    {
+    public function addPodcast()    {
 
         if(Auth::User()->usertype!="Admin" AND Auth::User()->usertype!="Sub_Admin")
         {
@@ -79,10 +79,10 @@ class WebPodcastController extends MainAdminController
 
         }
 
-        $page_title=trans('words.add_movie');
+        $page_title="Ajouter Podcast";//trans('words.add_movie');
 
         $language_list = Language::orderBy('language_name')->get();
-        $genre_list = PodcastCategory::orderBy('genre_name')->get();
+        $genre_list = PodcastCategory::orderBy('category_name')->get();
 
 
         return view('admin.pages.ext.addeditpodcats',compact('page_title','language_list','genre_list'));
@@ -129,9 +129,6 @@ class WebPodcastController extends MainAdminController
 
          $video_slug = Str::slug($inputs['video_title'], '-');
 
-
-         $movie_obj->upcoming = $inputs['upcoming'];
-
          $movie_obj->pd_access = $inputs['video_access'];
          $movie_obj->pd_lang_id = $inputs['movie_language'];
          $movie_obj->pd_genre_id = implode(',', $inputs['genres']);
@@ -139,7 +136,6 @@ class WebPodcastController extends MainAdminController
          $movie_obj->pd_slug = $video_slug;
          $movie_obj->pd_description = addslashes($inputs['video_description']);
 
-         $movie_obj->release_date = strtotime($inputs['release_date']);
          $movie_obj->duration = $inputs['duration'];
 
          if(isset($inputs['thumb_link']) && $inputs['thumb_link']!='')
@@ -148,52 +144,28 @@ class WebPodcastController extends MainAdminController
              $save_to                =   public_path('/upload/images/'.$inputs['video_image_thumb']);
              grab_image($image_source,$save_to);
 
-            $movie_obj->pd_image_thumb = 'upload/images/'.$inputs['video_image_thumb'];
+            $movie_obj->video_image_thumb = 'upload/images/'.$inputs['video_image_thumb'];
 
          }
          else
          {
-            $movie_obj->pd_image_thumb = $inputs['video_image_thumb'];
+            $movie_obj->video_image_thumb = $inputs['video_image_thumb'];
 
          }
 
-         $movie_obj->pd_image = $inputs['video_image'];
-
-
+         $movie_obj->video_image = $inputs['video_image'];
          $movie_obj->imdb_id = $inputs['imdb_id'];
-         $movie_obj->imdb_rating = $inputs['imdb_rating'];
          $movie_obj->imdb_votes = $inputs['imdb_votes'];
-
-         $movie_obj->content_rating = $inputs['content_rating'];
-
          $movie_obj->status = $inputs['status'];
-
          $movie_obj->seo_title = addslashes($inputs['seo_title']);
          $movie_obj->seo_description = addslashes($inputs['seo_description']);
          $movie_obj->seo_keyword = addslashes($inputs['seo_keyword']);
 
-        $movie_obj->pd_url = $inputs['video_url'];
+         $movie_obj->pd_url = $inputs['video_url_local'];
 
-        $movie_obj->video_url = $inputs['video_url_local'];
-
-
-         //$movie_obj->video_url = $video_url;
+         $movie_obj->download_url = $inputs['download_url'];
 
 
-         if(isset($inputs['download_enable']))
-         {
-            $movie_obj->download_enable = $inputs['download_enable'];
-            $movie_obj->download_url = $inputs['download_url'];
-         }
-
-
-        //  if(!empty($inputs['id']) AND $inputs['status']==0)
-        //  {
-        //     DB::table("recently_watched")
-        //             ->where("video_type", "=", "Movies")
-        //             ->where("video_id", "=", $inputs['id'])
-        //             ->delete();
-        //  }
 
          $movie_obj->save();
 
@@ -202,12 +174,12 @@ class WebPodcastController extends MainAdminController
 
             Session::flash('flash_message', trans('words.successfully_updated'));
 
-            return \Redirect::back();
+            return Redirect::back();
         }else{
 
             Session::flash('flash_message', trans('words.added'));
 
-            return \Redirect::back();
+            return Redirect::back();
 
         }
 
@@ -215,12 +187,12 @@ class WebPodcastController extends MainAdminController
     }
 
 
-    public function editMovie($movie_id)
+    public function editMovie($pd_id)
     {
           if(Auth::User()->usertype!="Admin" AND Auth::User()->usertype!="Sub_Admin")
         {
 
-                \Session::flash('flash_message', trans('words.access_denied'));
+                Session::flash('flash_message', trans('words.access_denied'));
 
                 return redirect('dashboard');
 
@@ -229,14 +201,11 @@ class WebPodcastController extends MainAdminController
           $page_title=trans('words.edit_movie');
 
           $language_list = Language::orderBy('language_name')->get();
-          $genre_list = Genres::orderBy('genre_name')->get();
+          $genre_list = PodcastCategory::orderBy('category_name')->get();
 
-          $actor_list = ActorDirector::where('ad_type','actor')->orderBy('ad_name')->get();
-          $director_list = ActorDirector::where('ad_type','director')->orderBy('ad_name')->get();
+          $movie = Podcasts::findOrFail($pd_id);
 
-          $movie = Movies::findOrFail($movie_id);
-
-          return view('admin.pages.addeditmovie',compact('page_title','movie','language_list','genre_list','actor_list','director_list'));
+          return view('admin.pages.ext.addeditpodcats',compact('page_title','movie','language_list','genre_list'));
 
     }
 
@@ -245,10 +214,10 @@ class WebPodcastController extends MainAdminController
     	if(Auth::User()->usertype=="Admin" OR Auth::User()->usertype=="Sub_Admin")
         {
 
-        $recently = RecentlyWatched::where('video_type','Movies')->where('video_id',$pd_id)->delete();
+        //$recently = RecentlyWatched::where('video_type','Movies')->where('video_id',$movie_id)->delete();
 
-        $pd = Podcasts::findOrFail($pd_id);
-        $pd->delete();
+        $movie = Podcasts::findOrFail($pd_id);
+        $movie->delete();
 
         Session::flash('flash_message', trans('words.deleted'));
 
